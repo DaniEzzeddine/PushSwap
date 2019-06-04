@@ -3,9 +3,7 @@
 void 	swap(t_stack *a)
 {
 	t_node 	*second;
-
 	second = a->top->next;
-
 	a->top->next = second->next;
 	second->next = a->top;
 	a->top = second;

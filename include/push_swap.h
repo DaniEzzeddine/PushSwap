@@ -11,6 +11,7 @@ typedef struct s_node {
 
 typedef struct s_stack {
 	   struct s_node *top;
+	   int		size;
 	   int 		max;
 	   int 		min;
 }               t_stack;

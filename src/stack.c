@@ -8,8 +8,14 @@ t_stack	*init(void)
 	if (!(stack = (t_stack *)malloc(sizeof(t_stack))))
 		return (NULL);
 	stack->top = NULL;
+<<<<<<< HEAD
+	stack->size = 0;
+	stack->max = INT32_MAX;
+	stack->min = INT32_MIN;
+=======
 	stack->max = INT32_MIN;
 	stack->min = INT32_MAX;
+>>>>>>> 058e1ef5e18d03cb3fa90585e021f5d795698c1f
 	return (stack);
 }
 
@@ -63,7 +69,7 @@ void			pop(t_stack	*stack)
 
 	if (isEmpty(stack))
 		return ;
-	
+	stack->size -= 1;
 	oldTop = peek(stack);
 	stack->top = stack->top->next;
 	if (oldTop == stack->max)
@@ -88,6 +94,8 @@ void	push(t_stack *stack, int content)
 		stack->max = content;
 	if (stack->min > content)
 		stack->min = content;
+	stack->size += 1;
+
 }
 
 void 	freeStack(t_stack **stack)
