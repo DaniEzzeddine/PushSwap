@@ -98,8 +98,7 @@ int         main(int ac, char **av)
     t_stack     *stack_a;
     t_stack     *stack_b;
     char    command[5];
-
-    int i = 0;
+ 
     stack_b = init();
     stack_a = push_args(ac, av);
     stacks = push_init(stack_a, stack_b);
