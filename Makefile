@@ -27,26 +27,6 @@ $(NAME): $(OBJ) $(LIBS)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 	@echo "\033[0m\c"
 
-rsa: $(BASE64_OBJ) $(RSA_OBJ) $(LIBS)
-	@echo "\033[0;34m\c"
-	$(CC) -o ft_ssl_$@ $^ $(CFLAGS) $(LIBS)
-	@echo "\033[0m\c"
-
-base64: $(BASE64_OBJ) $(LIBS)
-	@echo "\033[0;34m\c"
-	$(CC) -o ft_ssl_$@ $^ $(CFLAGS) $(LIBS)
-	@echo "\033[0m\c"
-
-des: $(DES_OBJ) $(LIBS)
-	@echo "\033[0;34m\c"
-	$(CC) -o ft_ssl_$@ $^ $(CFLAGS) $(LIBS)
-	@echo "\033[0m\c"
-
-md5: $(MD5_OBJ) $(LIBS)
-	@echo "\033[0;34m\c"
-	$(CC) -o ft_ssl_$@ $^ $(CFLAGS) $(LIBS)
-	@echo "\033[0m\c"
-
 clean:
 	@/bin/rm -f $(OBJ)
 	@+$(MAKE) clean -C ./libft
