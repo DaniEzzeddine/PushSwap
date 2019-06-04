@@ -22,66 +22,82 @@ void 				push_delete(t_pushstack **stack)
 
 void 				sa(t_pushstack *stack)
 {
-	swap(stack->a);
+	// printf("here\n");
+	if(!isEmpty(stack->a) || stack->a->size == 1)
+		swap(stack->a);
+	// printf("here\n");
 }
 
 void 				sb(t_pushstack *stack)
 {
-	swap(stack->b);
+	if(!isEmpty(stack->b) || stack->b->size == 1)
+		swap(stack->b);
 }
 
 void 				ss(t_pushstack *stack)
 {
-	swap(stack->a);
-	swap(stack->b);
+	sa(stack);
+	sb(stack);
 }
 
 void 			ra(t_pushstack *stack)
 {
-	rotateUp(stack->a);
+	if (!isEmpty(stack->a))
+		rotateUp(stack->a);
 }
 
 void 			rb(t_pushstack *stack)
 {
-	rotateUp(stack->b);
+	if (!isEmpty(stack->b))
+		rotateUp(stack->b);
 }
 
 void 		rr(t_pushstack *stack)
 {
-	rotateUp(stack->a);
-	rotateUp(stack->b);
+	if (!isEmpty(stack->a))
+		rotateUp(stack->a);
+	if (!isEmpty(stack->b))
+		rotateUp(stack->b);
 }
 
 void 		rra(t_pushstack *stack)
 {
-	rotateDown(stack->a);
+	if (!isEmpty(stack->a))
+		rotateDown(stack->a);
 }
 
 void 		rrb(t_pushstack *stack)
 {
-	rotateDown(stack->b);
+	if (!isEmpty(stack->b))
+		rotateDown(stack->b);
 }
 
 void 		rrr(t_pushstack *stack)
 {
-	rotateDown(stack->a);
-	rotateDown(stack->b);
+	if (!isEmpty(stack->a))
+		rotateDown(stack->a);
+	if (!isEmpty(stack->b))
+		rotateDown(stack->b);
 }
 
 void 	pa(t_pushstack *stack)
 {
-	int 	topA;
-
-	topA = peek(stack->a);
-	pop(stack->a);
-	push(stack->b, topA);
+	int 	topB;
+	if (!isEmpty(stack->b))
+	{
+		topB = peek(stack->b);
+		pop(stack->b);
+		push(stack->a, topB);
+	}
 }
 
 void 	pb(t_pushstack *stack)
 {
-	int 	topB;
-
-	topB = peek(stack->b);
-	pop(stack->b);
-	push(stack->a, topB);
+	int 	topA;
+	if (!isEmpty(stack->a))
+	{
+		topA = peek(stack->a);
+		pop(stack->a);
+		push(stack->b, topA);
+	}
 }
