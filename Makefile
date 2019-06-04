@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I $(IDIR) -g
-NAME = ft_ssl
+NAME = push_swap
 IDIR = ./include
 SRCDIR = ./src
 

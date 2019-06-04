@@ -8,10 +8,19 @@ t_stack	*init(void)
 	if (!(stack = (t_stack *)malloc(sizeof(t_stack))))
 		return (NULL);
 	stack->top = NULL;
-	stack->max = INT32_MAX;
-	stack->min = INT32_MIN;
+	stack->max = INT32_MIN;
+	stack->min = INT32_MAX;
 	return (stack);
 }
+
+void 	fill(t_stack *stack, char **argv, int size)
+{
+	int 	steps;
+
+	steps = size;
+	while (steps--)
+		push(stack, ft_atoi(argv[steps]));
+} 
 
 int 			isEmpty(t_stack *stack)
 {
