@@ -66,27 +66,27 @@ t_stack         *push_args(int ac, char **av)
 
 void        do_command(t_pushstack *stck, char *cmd)
 {
-    if (!ft_strcmp(cmd, "sa"))
+    if (!ft_strcmp(cmd, "sa\n"))
         g_func[0](stck);
-    else if (!ft_strcmp(cmd, "sb"))
+    else if (!ft_strcmp(cmd, "sb\n"))
         g_func[1](stck);
-    else if (!ft_strcmp(cmd, "ss"))
+    else if (!ft_strcmp(cmd, "ss\n"))
         g_func[2](stck);
-    else if (!ft_strcmp(cmd, "pa"))
+    else if (!ft_strcmp(cmd, "pa\n"))
         g_func[3](stck);
-    else if (!ft_strcmp(cmd, "pb"))
+    else if (!ft_strcmp(cmd, "pb\n"))
         g_func[4](stck);
-    else if (!ft_strcmp(cmd, "ra"))
+    else if (!ft_strcmp(cmd, "ra\n"))
         g_func[5](stck);
-    else if (!ft_strcmp(cmd, "rb"))
+    else if (!ft_strcmp(cmd, "rb\n"))
         g_func[6](stck);
-    else if (!ft_strcmp(cmd, "rr"))
+    else if (!ft_strcmp(cmd, "rr\n"))
         g_func[7](stck);
-    else if (!ft_strcmp(cmd, "rra"))
+    else if (!ft_strcmp(cmd, "rra\n"))
         g_func[8](stck);
-    else if (!ft_strcmp(cmd, "rrb"))
+    else if (!ft_strcmp(cmd, "rrb\n"))
         g_func[9](stck);
-    else if (!ft_strcmp(cmd, "rrr"))
+    else if (!ft_strcmp(cmd, "rrr\n"))
         g_func[10](stck);
     else
         print_error();
@@ -97,17 +97,18 @@ int         main(int ac, char **av)
     t_pushstack *stacks;
     t_stack     *stack_a;
     t_stack     *stack_b;
-    char    command[4];
+    char    command[5];
 
     int i = 0;
     stack_b = init();
     stack_a = push_args(ac, av);
-    push_init(stack_a, stack_b);
-    ft_memset(command, '\0', 4);
-    while (read(0, command, 3))
+    stacks = push_init(stack_a, stack_b);
+    ft_bzero((void *)command, 4);
+    while (read(0, command, 4))
     {
+        printf("command = |%s|\n", command);
         do_command(stacks, command);
-        ft_memset(command, '\0', 4);
+        ft_bzero((void *)command, 4);
     }
     return (0);
 }
