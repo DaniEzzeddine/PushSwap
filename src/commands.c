@@ -33,7 +33,7 @@ void rotateDown(t_stack *a)
 		return ;
 	while(iter->next->next)
 		iter = iter->next;
-	bottomValue = (iter->next->next->content);
+	bottomValue = (iter->next->content);
 	free(iter->next->next);
 	iter->next->next = NULL;
 	freshTop = new_node(bottomValue);
