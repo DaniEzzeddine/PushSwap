@@ -39,7 +39,7 @@ void 			rotateDown(t_stack *a);
 void			rotateUp(t_stack *a);
 void			swap(t_stack *a);
 void 			freeStack(t_stack **stack);
-
+void 			fill(t_stack *stack, char **argv, int size);
 
 t_pushstack			*push_init(t_stack *a, t_stack *b);
 void					push_delete(t_pushstack **stack);
