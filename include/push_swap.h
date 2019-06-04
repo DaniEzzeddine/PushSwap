@@ -21,6 +21,10 @@ typedef struct s_pushstack {
 }				t_pushstack;	
 
 
+
+
+
+
 t_stack		*init(void);
 int 			isEmpty(t_stack *stack);
 int				peek(t_stack *stack);
@@ -54,5 +58,8 @@ void 		rb(t_pushstack *stack);
 void 		ss(t_pushstack *stack);
 void 		sa(t_pushstack *stack);
 void 		sb(t_pushstack *stack);
+
+typedef void commands(t_pushstack	*stack);
+
 
 #endif
