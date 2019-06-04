@@ -12,9 +12,9 @@ t_pushstack 	*push_init(t_stack *a, t_stack *b)
 
 void 				push_delete(t_pushstack **stack)
 {
-	freeStack((*stack)->a);
+	freeStack(&(*stack)->a);
 	(*stack)->a = NULL;
-	freeStack((*stack)->b);
+	freeStack(&(*stack)->b);
 	(*stack)->b = NULL;
 	free(*stack);
 	stack = NULL;
@@ -72,7 +72,7 @@ void 	pa(t_pushstack *stack)
 {
 	int 	topA;
 
-	topA = peek(stack->a->top);
+	topA = peek(stack->a);
 	pop(stack->a);
 	push(stack->b, topA);
 }
@@ -81,7 +81,7 @@ void 	pb(t_pushstack *stack)
 {
 	int 	topB;
 
-	topB = peek(stack->b->top);
+	topB = peek(stack->b);
 	pop(stack->b);
 	push(stack->a, topB);
 }
