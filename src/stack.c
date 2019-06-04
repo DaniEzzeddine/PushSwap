@@ -1,4 +1,17 @@
 #include "../include/push_swap.h"
+commands *g_func[4] = {
+		sa,
+		sb,
+		ss,
+		pa,
+		pb,
+		ra,
+		rb,
+		rr,
+		rra,
+		rrb,
+		rrr
+    };
 
 t_stack	*init(void)
 {
@@ -24,20 +37,7 @@ int				peek(t_stack *stack)
 	return (stack->top->content);
 }
 
-void			pop(t_stack	*stack)
-{
-	int 	oldTop;
 
-	if (isEmpty(stack))
-		return ;
-	
-	oldTop = peek(stack);
-	stack->top = stack->top->next;
-	if (oldTop == stack->max)
-		stack->max = findMax(stack);
-	if (oldTop == stack->min)
-		stack->min = findMin(stack);
-}
 
 int 			stackMax(t_stack *stack)
 {
@@ -58,7 +58,22 @@ t_node		*new_node(int	content)
 	node->content = content;
 	node->next = NULL;
 	return (node);
-}	
+}
+	
+void			pop(t_stack	*stack)
+{
+	int 	oldTop;
+
+	if (isEmpty(stack))
+		return ;
+	
+	oldTop = peek(stack);
+	stack->top = stack->top->next;
+	if (oldTop == stack->max)
+		stack->max = stackMax(stack);
+	if (oldTop == stack->min)
+		stack->min = stackMin(stack);
+}
 
 void	push(t_stack *stack, int content)
 {

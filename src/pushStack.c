@@ -12,9 +12,9 @@ t_pushstack 	*push_init(t_stack *a, t_stack *b)
 
 void 				push_delete(t_pushstack **stack)
 {
-	freeStack((*stack)->a);
+	freeStack(&(*stack)->a);
 	(*stack)->a = NULL;
-	freeStack((*stack)->b);
+	freeStack(&(*stack)->b);
 	(*stack)->b = NULL;
 	free(*stack);
 	stack = NULL;
