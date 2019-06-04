@@ -26,11 +26,11 @@ typedef struct s_pushstack {
 
 
 
-t_stack		*init(void);
+t_stack			*init(void);
 int 			isEmpty(t_stack *stack);
 int				peek(t_stack *stack);
 void			pop(t_stack	*stack);
-t_node		*new_node(int	content);
+t_node			*new_node(int	content);
 void			push(t_stack *stack, int content);
 int 			findMax(t_stack *a);
 int 			findMin(t_stack *a);
@@ -61,6 +61,8 @@ void 		sa(t_pushstack *stack);
 void 		sb(t_pushstack *stack);
 
 typedef void commands(t_pushstack	*stack);
+void      	  solve_push_swap(t_pushstack *stacks);
+int				isSorted(t_stack *a);
 
 
 #endif

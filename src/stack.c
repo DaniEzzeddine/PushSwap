@@ -34,8 +34,6 @@ int				peek(t_stack *stack)
 	return (stack->top->content);
 }
 
-
-
 int 			stackMax(t_stack *stack)
 {
 	return stack->max;

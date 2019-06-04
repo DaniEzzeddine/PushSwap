@@ -7,7 +7,7 @@ SRCDIR = ./src
 _DEPS = libft.h push_swap.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_SRC = main.c commands.c pushStack.c stack.c
+_SRC = main.c commands.c pushStack.c stack.c algo.c
 SRC = $(patsubst %, $(SRCDIR)/%, $(_SRC))
 
 _CHECKER = checker.c stack.c pushStack.c commands.c
