@@ -13,6 +13,9 @@ typedef struct s_stack {
 	   struct s_node *top;
 }               t_stack;
 
+
+
+//Stack
 t_stack			*init(void);
 int 			isEmpty(t_stack *stack);
 int				peek(t_stack *stack);
