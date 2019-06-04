@@ -1,17 +1,5 @@
 #include "../include/push_swap.h"
-commands *g_func[4] = {
-		sa,
-		sb,
-		ss,
-		pa,
-		pb,
-		ra,
-		rb,
-		rr,
-		rra,
-		rrb,
-		rrr
-    };
+
 
 t_stack	*init(void)
 {

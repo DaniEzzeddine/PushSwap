@@ -1,6 +1,6 @@
 #include "../include/push_swap.h"
 #include <stdio.h>
-commands *g_func[4] = {
+commands *g_func[11] = {
 		sa,
 		sb,
 		ss,
