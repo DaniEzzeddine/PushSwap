@@ -33,11 +33,13 @@ int main(int argc, char **argv)
 	stacks = push_init(init(), init());
 	fill(stacks->a, argv+1, argc-1);
 	print_stacks(stacks);
+	printf("\nSIZE = %d\n", stacks->a->size);
 	while (!isSorted(stacks->a))
 	{
 		solve_push_swap(stacks);
-		print_stacks(stacks);
+		print_stacks(stacks);	
 	}
+	print_stacks(stacks);	
 	push_delete(&stacks);
 	return (0);
 }

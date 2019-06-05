@@ -1,4 +1,5 @@
 #include "../include/push_swap.h"
+#include <stdio.h>
 
 int			isSorted(t_stack *a)
 {
@@ -64,16 +65,32 @@ void		transfer_to_a(t_pushstack *stacks)
 		pa(stacks);
 }
 
+int			getMinStack(t_stack *stack)
+{
+	t_node	*iter;
+	int		ans = INT32_MAX;
+
+	iter = stack->top;
+	while (iter->next)
+	{
+		if (iter->content < ans)
+			ans = iter->content;
+		iter = iter->next;
+	}
+	return (ans);
+}
+
 void        solve_push_swap(t_pushstack *stacks)
 {
 	int pos;
 
 	while (stacks->a->size > 3)
 	{
+		stacks->a->min = getMinStack(stacks->a);
 		pos = getPos(stacks->a, stacks->a->min);
 		if (pos == 0)
 			pb(stacks);
-		else if (pos >= (stacks->a->size) / 2)
+		else if (pos > (stacks->a->size + 1) / 2)
 			ra(stacks);
 		else
 			rra(stacks);

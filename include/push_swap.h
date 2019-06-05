@@ -63,6 +63,7 @@ void 		sb(t_pushstack *stack);
 typedef void commands(t_pushstack	*stack);
 void      	  solve_push_swap(t_pushstack *stacks);
 int				isSorted(t_stack *a);
+void 			print_stacks(t_pushstack *stacks);
 
 
 #endif
